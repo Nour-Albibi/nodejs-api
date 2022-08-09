@@ -1,0 +1,117 @@
+@import url(/notokufiarabic.css);
+
+body {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+button, html, input, select, textarea {
+  font-family: 'Noto Kufi Arabic', sans-serif !important;
+}
+
+.md-toolbar-tools-bottom {
+  font-size: small;
+  & :last-child {
+    opacity: 0.8;
+  }
+}
+md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #fff;
+}
+
+.md-serious {
+  border-top-width: 2px;
+  border-top-color: black;
+}
+md-content {
+  background-color: #eee;
+}
+
+.md-datepicker-triangle-button {
+  right: auto !important;
+  left: 0px !important;
+  transform: translateY(-25%) translateX(-40%) !important;
+}
+
+.md-chips .md-chip-input-container {
+  float: right !important;
+}
+
+md-datepicker {
+  padding-right: auto !important;
+  padding-left: 18px !important;
+  margin-right: auto !important;
+  margin-left: 18px !important;
+}
+
+md-menu-item > .md-button md-icon {
+  margin: auto 0px auto 16px !important;
+}
+
+md-list-item.md-list-center {
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(/MaterialIcons-Regular.woff2) format('woff2'),
+       url(/MaterialIcons-Regular.woff) format('woff'),
+       url(/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.md-button.md-fab {
+  position: fixed !important;
+}
+
+md-icon{
+  cursor: default;
+}
+
+md-icon[ng-click]{
+  cursor: pointer;
+}
+md-icon[ui-sref]{
+  cursor: pointer;
+}
+
+.dragover {
+  border: 5px dashed blue;
+}
+
+.drop-box {
+  background: #F8F8F8;
+  border: 5px dashed #DDD;
+  text-align: center;
+  padding: 25px;
+  margin: 10px;
+}

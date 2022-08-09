@@ -1,0 +1,52 @@
+.inset
+  .tabpanel-container
+    div(role='panel', layout='row' layout-align='center center')
+      md-card(flex=90)
+        md-card-header
+          md-card-header-text
+            span.md-title {{vm.cafe.name}}
+        md-card-content(layout='column' layout-padding)
+          form(layout='column')
+            md-input-container(flex)
+              md-checkbox(ng-model='vm.randomUsers') أنشئ مستخدمين عشوائيين
+            div(layout='column' ng-show='vm.randomUsers')
+              div(layout='row')
+                md-input-container
+                  label البادئة
+                  input(type='text' ng-disabled='!vm.randomUsers' ng-model='vm.randomUser.prefix')
+              div(layout='row')
+                md-input-container
+                  label عدد المستخدمين
+                  input(type='number' ng-disabled='!vm.randomUsers' ng-model='vm.randomUser.number')
+                div(flex=5)
+                md-input-container
+                  label عدد دقائق الدخول
+                  input(type='number' ng-disabled='!vm.randomUsers' ng-model='vm.randomUser.period')
+              div(layout='row')
+                md-button.md-primary.md-raised(ng-show='vm.generatedUsers' ng-csv='vm.exportcsv()' filename='users.csv') تنزل ملف المستخدمين الجدد
+            div(layout='column' ng-hide='vm.randomUsers')
+              div(layout='row')
+                md-input-container
+                  label اسم المستخدم
+                  input(ng-model='vm.user.username')
+                div(flex=5)
+                md-input-container
+                  label كلمة المرور
+                  input(ng-model='vm.user.password')
+              div(layout='row')
+                md-input-container
+                  label عدد دقائق الدخول
+                  input(type='number', ng-model='vm.user.period')
+                div(flex=5)
+                md-input-container
+                  label عدد مرات الاستخدام
+                  input(type='number', ng-model='vm.user.max_uses')
+              div(layout='row')
+                md-input-container
+                  label عدد الجلسات المتزامنة
+                  input(type='number', ng-model='vm.user.max_sesn')
+        md-card-actions(layout='row')
+          span(flex)
+          md-button.md-primary.md-raised(ng-click='vm.submit()') إضافة
+          span(flex=5)
+          md-button.md-warn.md-raised(ui-sref='^.list') إلغاء

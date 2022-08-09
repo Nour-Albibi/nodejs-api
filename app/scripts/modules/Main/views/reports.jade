@@ -1,0 +1,27 @@
+.inset
+  .tabpanel-container
+    div(role='panel', layout='row' layout-align='center center')
+      md-card(flex=90)
+        md-card-content(layout='column')
+          md-chips(ng-model='vm.cafe' ng-autocomplete-snap md-transform-chip='vm.transformChip($chip)' md-require-match='false')
+            md-autocomplete(placeholder='اختر مقهى' md-selected-item='vm.selectedItem' md-search-text='vm.searchText' md-items='item in vm.querySearch(vm.items)' md-item-text='item.name')
+              span(md-highlight-text='vm.searchText')
+            md-chip-template
+              span
+                strong {{$chip.name}}
+                em {{$chip.type}}
+          md-chips(ng-model='vm.cafe' ng-autocomplete-snap md-transform-chip='vm.transformChip($chip)' md-require-match='false')
+            md-autocomplete(placeholder='اختر إعلاناً' md-selected-item='vm.selectedItem' md-search-text='vm.searchText' md-items='item in vm.querySearch(vm.items)' md-item-text='item.name')
+              span(md-highlight-text='vm.searchText')
+            md-chip-template
+              span
+                strong {{$chip.name}}
+                em {{$chip.type}}
+          div(layout='row' style='margin-top: 5px;')
+            label من
+            md-datepicker(ng-model='vm.startDate' md-placeholder='تاريخ البداية' flex)
+            label إلى
+            md-datepicker(ng-model='vm.endDate' md-placeholder='تاريخ النهاية' flex)
+            span(flex)
+            md-button.md-icon-button.md-primary
+              md-icon blur_on

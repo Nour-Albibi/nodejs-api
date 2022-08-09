@@ -1,0 +1,35 @@
+.inset
+  .tabpanel-container
+    div(role='panel', layout='row' layout-fill layout-align='center center')
+      md-card(flex=90)
+        md-card-header
+          md-card-header-text
+            span.md-title {{vm.cafe.name}}
+        md-card-content(layout='row' layout-padding)
+          div(flex)
+            div(layout='row')
+              md-input-container(flex)
+                label أضف صورة إعلان
+                md-chips(ng-model="vm.selectedExposures" readonly="true" md-removable="true")
+                  md-chip-template {{$chip.sponsor}}:{{$chip.name}}
+                md-select(ng-model='vm.exposure' flex=40)
+                  md-option(ng-repeat="ad in vm.exposureAds" ng-value='ad') {{ad.sponsor}}:{{ad.name}}
+            div(layout='row')
+              md-input-container(flex)
+                label أضف صفحة فيسبوك
+                md-chips(ng-model="vm.selectedFacebooks" readonly="true" md-removable="true")
+                  md-chip-template {{$chip.sponsor}}:{{$chip.name}}
+                md-select(ng-model='vm.facebook' flex=40)
+                  md-option(ng-repeat="ad in vm.facebookAds" ng-value='ad') {{ad.sponsor}}:{{ad.name}}
+            div(layout='row')
+              md-input-container(flex)
+                label أضف رابط التحويل
+                md-chips(ng-model="vm.selectedRedirects" readonly="true" md-removable="true")
+                  md-chip-template {{$chip.sponsor}}:{{$chip.name}}
+                md-select(ng-model='vm.redirect' flex=40)
+                  md-option(ng-repeat="ad in vm.redirectAds" ng-value='ad') {{ad.sponsor}}:{{ad.name}}
+        md-card-actions(layout='row')
+          span(flex)
+          md-button.md-primary.md-raised(ng-click='vm.submit()') تعديل
+          span(flex=5)
+          md-button.md-warn.md-raised(ui-sref='^.list') إلغاء

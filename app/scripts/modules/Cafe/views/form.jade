@@ -1,0 +1,27 @@
+.inset
+  .tabpanel-container
+    div(role='panel', layout='row' layout-align='center center')
+      md-card(flex=90)
+        md-card-header
+          md-card-header-text
+            span.md-title {{vm.cafe.name}}
+        md-card-content(layout='column' layout-padding)
+          form(layout='row')
+            md-input-container
+              label اسم المقهى
+              input(ng-model='vm.cafe.name')
+            div(flex=5)
+            //- md-input-container
+            //-   label المنطقة
+            //-   md-select(ng-model='vm.palce')
+            //-     md-option(value=1) دمشق
+            //-     md-option(value=2) حمص
+            //-     md-option(value=3) حماة
+            md-input-container
+              label العنوان
+              input(ng-model='vm.cafe.ip')
+        md-card-actions(layout='row')
+          span(flex)
+          md-button.md-primary.md-raised(ng-click='vm.submit()') تأكيد
+          span(flex=5)
+          md-button.md-warn.md-raised(ui-sref='^.list') إلغاء

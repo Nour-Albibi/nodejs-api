@@ -1,0 +1,42 @@
+doctype transitional
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title UltraFi Control Panel
+    link(rel='stylesheet', type='text/css', href='/assets/css/bootstrap.min.css')
+    //link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
+    link(rel='stylesheet', type='text/css', href='/assets/css/style2.css')
+    link(rel='shortcut icon', href='/assets/favicon.ico', type='image/x-icon')
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+  body
+    .container-fluid
+      .row
+        img.center-block#logo(src='/assets/images/logo.png')
+       .row
+   // img.center-block(src='/assets/images/lock.png')
+  if error 
+    .error(dir='ltr')
+      strong   #{error}
+span(align:right)
+   | 
+  form.row(action='/login',method='post')
+    .center-block.text-center.pagination-centered
+    .container
+      table(align='center')
+        tr
+        td
+            label(for='username') &nbsp; &nbsp; اسم المستخدم &nbsp; &nbsp;
+        tr
+          td
+            input(type='text' id='username' name='username'  placeholder='أدخل اسم المستخدم')
+        tr
+           td
+            label(for='password') &nbsp; &nbsp; كلمة المرور &nbsp; &nbsp;
+        tr
+          td
+            input(type='password' id='password' name='password' placeholder='أدخل كلمة المرور' )
+        
+      button(type='submit' value='دخول')دخول
+    footer.footer.text-center
+      p Copyright &copy; #{new Date().getFullYear()} UltraWares.com

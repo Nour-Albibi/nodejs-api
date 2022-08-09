@@ -1,0 +1,20 @@
+md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right' md-is-locked-open='$mdMedia(\'gt-md\')', layout-fill)
+  header
+    img.inset(src=require('assets/img/logo.png'))
+  md-menu-content
+    md-menu-item
+      md-button(ui-sref='app.overview' ng-disabled='true')
+        md-icon dashboard
+        | اللوحة الرئيسية
+    md-menu-item
+      md-button(ui-sref='app.cafe.list')
+        md-icon local_cafe
+        | المقاهي
+    md-menu-item
+      md-button(ui-sref='app.ad.list')
+        md-icon picture_in_picture
+        | الإعلانات
+    md-menu-item
+      md-button(ui-sref='app.reports' ng-disabled='true')
+        md-icon insert_chart
+        | التقارير

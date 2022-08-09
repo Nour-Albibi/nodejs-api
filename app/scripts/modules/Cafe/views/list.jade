@@ -1,0 +1,31 @@
+.inset
+  .tabpanel-container
+    div(role='panel', layout='row' layout-align='center center')
+      md-card(flex=90)
+        md-card-content(ng-switch='vm.cafes.length > 0')
+          div(ng-switch-when='false' layout='row')
+            span.md-warn.md-raised.md-button(flex) لا يوجد مقاهٍ
+          md-list(ng-switch-when='true')
+            md-list-item.md-list-center
+              span(flex=30) المقهى
+              span(flex=15) عنوان IP
+              span(flex=25) 
+              div(flex=30) الإجراءات
+            md-divider.md-serious
+            md-list-item.md-list-center(ng-repeat='cafe in vm.cafes')
+              span(flex=30) {{cafe.name}}
+              span(flex=15) {{cafe.ip}}
+              span(flex=25)
+              div(flex=30, layout='row')
+                md-icon(ng-click='vm.delete($index, $event)') delete
+                  md-tooltip حذف
+                md-icon(ui-sref='^.update({id: cafe._id})') edit
+                  md-tooltip تعديل المعلومات
+                md-icon(ui-sref='^.users({id: cafe._id})') person_add
+                  md-tooltip إضافة مستخدمين
+                md-icon(ui-sref='^.updateAd({id: cafe._id})') web
+                  md-tooltip تعديل الإعلان
+                md-icon(ui-sref='^.addMac({id: cafe._id})') laptop
+                  md-tooltip إضافة عنوان MAC
+md-button.md-fab.md-fab-bottom-left.md-warn(aria-label='Add Cafe' ui-sref='^.create')
+  md-icon add

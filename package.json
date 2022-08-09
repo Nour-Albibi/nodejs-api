@@ -1,0 +1,52 @@
+{
+  "name": "emarket_api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "PORT=8080 node ./bin/www",
+    "start:dev": "PORT=8000 NODE_ENV=dev nodemon -i app/ ./bin/www"
+  },
+  "dependencies": {
+    "@editorjs/editorjs": "^2.25.0",
+    "angular": "^1.6.6",
+    "angular-animate": "^1.6.6",
+    "angular-aria": "^1.6.6",
+    "angular-material": "^1.1.5",
+    "angular-messages": "^1.6.6",
+    "angular-resource": "^1.6.6",
+    "angular-sanitize": "^1.6.6",
+    "angular-ui-router": "^0.2.18",
+    "async": "^2.5.0",
+    "base64-image-upload": "^1.1.4",
+    "body-parser": "~1.13.2",
+    "client-sessions": "^0.8.0",
+    "cookie-parser": "~1.3.5",
+    "cryptr": "^3.0.0",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "file-loader": "^0.11.2",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^4.11.14",
+    "morgan": "~1.6.1",
+    "multer": "^1.1.0",
+    "ng-csv": "^0.3.6",
+    "ng-file-upload": "^12.2.13",
+    "node-fetch": "2.0",
+    "querystring": "^0.2.0",
+    "request": "^2.83.0",
+    "serve-favicon": "~2.3.0",
+    "underscore": "^1.8.3",
+    "url": "^0.11.0",
+    "webpack-dev-middleware": "^1.12.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "html-loader": "^0.4.3",
+    "jade-loader": "^0.8.0",
+    "style-loader": "^0.13.0",
+    "underscore": "^1.8.3",
+    "webpack-dev-middleware": "^1.10.1"
+  }
+}

@@ -1,0 +1,43 @@
+.inset
+  .tabpanel-container
+    div(role='panel', layout='row', layout-fill='', layout-align='center center')
+      md-card(flex='90')
+        md-card-header(ng-if='boolean(vm.ad)')
+          md-card-header-text
+            span.md-title {{::vm.ad.name}} | {{::vm.ad.sponsor}}
+        md-card-content(layout='column', layout-padding='', ng-switch='vm.ad.__t')
+          div(flex='5')
+            div(layout='row')
+              md-input-container
+                label المعلن
+                input(ng-model='vm.ad.sponsor')
+              div(flex='5')
+              md-input-container
+                label اسم الإعلان
+                input(ng-model='vm.ad.name')
+              div(flex='5')
+              md-input-container(ng-if='!vm.update' flex=20)
+                label نوع الإعلان
+                md-select(ng-model='vm.ad.__t')
+                  md-option(value='ExposureAd') Exposure
+                  md-option(value='FacebookAd') Facebook
+                  md-option(value='RedirectAd') Redirect
+          div(flex='', layout='row', ng-switch-when='ExposureAd')
+            div(layout='column', flex='40')
+              .drop-box(layout='column', layout-align='center center', ngf-drop='', ngf-select='', ng-model='vm.file', ngf-drag-over-class='dragover', ngf-multiple='false', ngf-allow-dir='false', accept='*', ngf-pattern='*')
+                | اسحب صورة الإعلان إلى هنا
+                md-progress-circular(md-mode='indeterminate', ng-show='vm.uploadProgress')
+                img(ng-src='/api/files/{{vm.ad.image}}', ng-show='vm.ad.image', style='width: 50%;')
+          div(flex='', layout='row', ng-switch-when='FacebookAd')
+            md-input-container(flex='60')
+              label معرف صفحة فيسبوك
+              input(ng-model='vm.ad.facebookPageId')
+          div(flex='', layout='row', ng-switch-when='RedirectAd')
+            md-input-container(flex='60')
+              label رابط التحويل
+              input(type='url', ng-model='vm.ad.redirectUrl')
+        md-card-actions(layout='row')
+          span(flex='')
+          md-button.md-primary.md-raised(ng-click='vm.submit()') تعديل
+          span(flex='5')
+          md-button.md-warn.md-raised(ui-sref='^.list') إلغاء

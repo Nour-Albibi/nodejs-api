@@ -1,0 +1,31 @@
+.inset
+  .tabpanel-container
+    div(role='panel', layout='row', layout-align='center center')
+      md-card(ng-switch='vm.pending', flex='90')
+        md-card-content(ng-switch-when='true')
+          md-progress-linear(md-mode='indeterminate')
+        md-card-content(ng-switch-when='false', ng-switch='vm.ads.length > 0')
+          div(ng-switch-when='false', layout='row')
+            span.md-warn.md-raised.md-button(flex='') لا يوجد إعلانات
+          md-list(ng-switch-when='true')
+            md-list-item.md-list-center
+              span(flex='20') الإعلان
+              span(flex='20') المعلن
+              span(flex='20') نوع الإعلان
+              span(flex='10')
+              div(flex='30') الإجراءات
+            md-divider.md-serious
+            md-list-item.md-list-center(ng-repeat='ad in vm.ads')
+              span(flex='20') {{ad.name}}
+              span(flex='20') {{ad.sponsor}}
+              span(flex='20') {{ad.__t}}
+              span(flex='10')
+              div(flex='30', layout='row')
+                md-icon(ng-click='vm.delete($index, $event)')
+                  | delete
+                  md-tooltip حذف
+                md-icon(ui-sref='^.update({id: ad._id})')
+                  | edit
+                  md-tooltip تعديل المعلومات
+md-button.md-fab.md-fab-bottom-left.md-warn(aria-label='Add Ad', ui-sref='^.create')
+  md-icon add

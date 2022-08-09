@@ -1,0 +1,23 @@
+.relative(layout='column' layout-fill role='main')
+  md-toolbar
+    .md-toolbar-tools
+      md-button.md-icon-button(hide-gt-md aria-label='Menu' ng-click='vm.toggleNavMenu()')
+        md-icon menu
+      span(flex=5)
+      h3 اللوحة الرئيسية
+      span(flex)
+      md-menu
+        md-button.md-icon-button(aria-label='Open Settings' ng-click='$mdOpenMenu($event)')
+          md-icon.md-warn.md-hue-5 more_vert
+        md-menu-content
+          md-menu-item
+            md-button(ui-sref='app.settings')
+              md-icon settings
+              | الإعدادات
+          md-divider
+          md-menu-item
+            md-button(ui-sref='out')
+              md-icon exit_to_app
+              | تسجيل الخروج
+  md-content(md-scroll-y, flex)
+    div(ui-view='nav-content')

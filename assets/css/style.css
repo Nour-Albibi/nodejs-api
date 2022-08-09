@@ -1,0 +1,58 @@
+@import url("/fonts/lato.css");
+body {
+  padding-left: 50px;
+  padding-right: 50px;
+  font: 14px "Lato", Helvetica, Arial, sans-serif;
+  color: white;
+  background-color: #333; }
+
+a {
+  color: #00B7FF;
+  dispaly: block; }
+
+.row {
+  padding: 5px; }
+  .row #logo {
+    padding: 10px; }
+
+.shadow, #banner {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+
+input {
+  color: black; }
+  input[type="submit"] {
+    color: white;
+    background-color: #F28821; }
+  input:focus[type="submit"] {
+    box-shadow: 0px 0px 18px #D36E0B;
+    -moz-box-shadow: 0px 0px 18px #D36E0B;
+    -webkit-box-shadow: 0px 0px 18px #D36E0B; }
+  input:focus[type="text"] {
+    color: black;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: #D36E0B;
+    box-shadow: 0px 0px 18px #D36E0B;
+    -moz-box-shadow: 0px 0px 18px #D36E0B;
+    -webkit-box-shadow: 0px 0px 18px #D36E0B; }
+  input:focus[type="password"] {
+    color: black;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: #D36E0B;
+    box-shadow: 0px 0px 18px #D36E0B;
+    -moz-box-shadow: 0px 0px 18px #D36E0B;
+    -webkit-box-shadow: 0px 0px 18px #D36E0B; }
+
+.center {
+  margin: 0px auto;
+  border: 3px solid #73AD21;
+  padding: 10px; }
+
+.error {
+  color: white;
+  background-color: #F28821;
+  border-radius: 2px;
+  border-color: #B35F0E; }
+
+/*# sourceMappingURL=style.css.map */
